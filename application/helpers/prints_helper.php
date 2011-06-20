@@ -19,6 +19,3 @@ function create_dropdown_array($key_name, $value_name, $object_array) {
     return array_combine($keys,$values);
 }
 
-function br() {
-    echo '<br>';
-}
