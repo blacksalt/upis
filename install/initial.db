@@ -1,0 +1,74 @@
+-- phpMyAdmin SQL Dump
+-- version 3.1.3.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jun 20, 2011 at 08:39 PM
+-- Server version: 5.1.33
+-- PHP Version: 5.2.9
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `upis`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `batch`
+--
+
+CREATE TABLE IF NOT EXISTS `batch` (
+  `batch_id` int(11) NOT NULL AUTO_INCREMENT,
+  `year` year(4) NOT NULL,
+  `remarks` varchar(100) NOT NULL,
+  PRIMARY KEY (`batch_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `batch`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `students`
+--
+
+CREATE TABLE IF NOT EXISTS `students` (
+  `student_id` int(11) NOT NULL AUTO_INCREMENT,
+  `student_no` int(11) NOT NULL,
+  `batch_id` int(11) NOT NULL,
+  `last` varchar(40) NOT NULL,
+  `given` varchar(40) NOT NULL,
+  `middle` int(11) NOT NULL,
+  `nick` int(11) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `birthday` date NOT NULL,
+  `mobile` int(11) NOT NULL,
+  `landline` int(11) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `religion` varchar(40) NOT NULL,
+  `entry` varchar(40) NOT NULL,
+  `graduate` tinyint(1) NOT NULL DEFAULT '0',
+  `upcat` tinyint(1) NOT NULL DEFAULT '0',
+  `disciplinary` tinyint(1) NOT NULL DEFAULT '0',
+  `father` varchar(50) NOT NULL,
+  `foccupation` varchar(40) NOT NULL,
+  `foffice` varchar(100) NOT NULL,
+  `fcontact` varchar(50) NOT NULL,
+  `mother` varchar(50) NOT NULL,
+  `moccupation` varchar(40) NOT NULL,
+  `moffice` varchar(100) NOT NULL,
+  `mcontact` int(50) NOT NULL,
+  PRIMARY KEY (`student_id`),
+  KEY `batch_id` (`batch_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `students`
+--
+
+
