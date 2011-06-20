@@ -74,9 +74,6 @@ body {
     padding: 5px 0;
 }
 
-#leftpane h1 {
-    color:blue;
-}
 #rightpane {
     width: 225px;
     float: right;
@@ -92,6 +89,11 @@ body {
 #rightpane li {
     border-bottom: 1px dotted #AAA;
     line-height: 30px;
+}
+
+#rightpane h3 {
+    font-weight: bold;
+    color: #98C83F;
 }
 
 #rightpane a:visited, #rightpane a:link {
@@ -111,4 +113,5 @@ body {
     border-bottom-right-radius : 5px 5px;
     -moz-border-radius-bottomright : 5px 5px;
 }
+
 

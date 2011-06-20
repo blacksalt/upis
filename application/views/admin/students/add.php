@@ -1,4 +1,4 @@
-<h4>Add Student</h4>
+<h2>Add Student</h2>
 
 <?php
     echo form_open('students/add');
@@ -28,15 +28,11 @@
     echo form_error('nick');
     echo br();
     
+    echo br();
+    
     echo form_label('Address','address');
     echo form_input('address',set_value('address'));
     echo form_error('address');
-    echo br();
-    
-    #TODO: javascript calendar
-    echo form_label('Birthday (yyyy-mm-dd)','birthday');
-    echo form_input('birthday',set_value('birthday'));
-    echo form_error('birthday');
     echo br();
     
     echo form_label('Mobile','mobile');
@@ -54,6 +50,14 @@
     echo form_error('email');
     echo br();
 
+    echo br(); 
+    
+    #TODO: javascript calendar
+    echo form_label('Birthday (yyyy-mm-dd)','birthday');
+    echo form_input('birthday',set_value('birthday'));
+    echo form_error('birthday');
+    echo br();
+    
     echo form_label('Religion','religion');
     echo form_dropdown('religion', array('catholic'=>'Catholic', 'protestant'=>'Protestant', 'muslim' => 'Muslim', 'others'=>'Others'));
     echo form_error('religion');
@@ -81,6 +85,8 @@
     echo form_radio(array('name'=>'disciplinary', 'value'=>'0', 'checked'=>FALSE)) .'No';
     echo form_error('disciplinary');   
     echo br(); 
+    
+    echo br();
 
     echo form_label('Father Name','father');
     echo form_input('father',set_value('father'));
@@ -100,6 +106,8 @@
     echo form_label('Father Contacts','fcontact');
     echo form_input('fcontact',set_value('fcontact'));
     echo form_error('fcontact');
+    echo br();
+    
     echo br();
     
     echo form_label('Mother Name','mother');
@@ -122,6 +130,8 @@
     echo form_error('mcontact');
     echo br();
     
+    echo br();
+    
     echo form_label('Guardian Name','guardian');
     echo form_input('guardian',set_value('guardian'));
     echo form_error('guardian');
@@ -141,7 +151,8 @@
     echo form_input('gcontact',set_value('gcontact'));
     echo form_error('gcontact');
     echo br();
-    
+  
+    echo br();  
     echo form_submit('add','Add');
     echo form_close();
 ?>

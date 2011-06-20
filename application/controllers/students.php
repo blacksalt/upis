@@ -4,11 +4,11 @@ class Students extends MY_Controller {
 
     function __construct() {
         parent::__construct();
+        $this->subnav = "admin/students/subnav";
     }
     
     function index() {
         //check if admin
-        $this->data['content'] = 'yey';
         $this->render('admin/students/add');
     }
 
@@ -40,6 +40,7 @@ class Students extends MY_Controller {
         $this->form_validation->set_rules('moffice','Mother Office','');
         $this->form_validation->set_rules('mcontact','Mother Contct','required');
 
+        #TODO: guardian field in db
         $this->form_validation->set_rules('guardian','Guardian Name','alpha_dash');
         #TODO: validation for following if guardian is avaliable
         $this->form_validation->set_rules('relationship','Relationship to Student','');
@@ -48,12 +49,63 @@ class Students extends MY_Controller {
         
         
         if ($this->form_validation->run()) {
-            $name = $this->input->post('name');
+            $new = array(
+                'last' => $this->input->post('last'),
+                'given' => $this->input->post('given'),
+                'middle' => $this->input->post('middle'),
+                'nick' => $this->input->post('nick'),
+                
+                'address' => $this->input->post('address'),
+                'birthday' => $this->input->post('birthday'),
+                'mobile' => $this->input->post('mobile'),
+                'landline' => $this->input->post('landline'),
+                'email' => $this->input->post('email'),
+                
+                'father' => $this->input->post('father'),
+                'foccupation' => $this->input->post('foccupation'),
+                'foffice' => $this->input->post('foffice'),
+                'fcontact' => $this->input->post('fcontact'),
+                
+                'mother' => $this->input->post('mother'),
+                'moccupation' => $this->input->post('moccupation'),
+                'moffice' => $this->input->post('moffice'),
+                'mcontact' => $this->input->post('mcontact'),
+                
+                #TODO: guardian field
+                );
+            
             
         } else {
             $this->render('admin/students/add');
         }
     }
+    
+    function add_batch() {
+        $this->load->library('form_validation');
+        
+       #TODO: additional validation? 
+        $this->form_validation->set_rules('year','Year','required|numeric|exact_length[4]|callback_check_year');
+        $this->form_validation->set_rules('remarks','Remarks','');
+        
+        if ($this->form_validation->run()) {
+            $year = $this->input->post('year');
+
+            $this->session->set_flashdata('success','Batch ' .$year. ' successfully added.');            
+            redirect('students/add_batch');
+
+        } else {
+            $this->render('admin/students/batch/add');
+        }
+    }
+    
+    function check_year($yr) {
+        //check for multiple instance
+        return TRUE;
+    }
+    
+    # TODO: delete batch (if no student instance yet)
+    # TODO: edit batch
+    
     # TODO: Upload CSV Student Profile
     # TODO: View Student Profile
     # TODO: Update Student Profile
