@@ -6,7 +6,7 @@
     
     echo '<h3>Students</h3>';
     echo '<ul>';
-        echo '<li>' .anchor('students/add', 'View All'). '</li>';
+        echo '<li>' .anchor('students/view_all', 'View All'). '</li>';
         echo '<li>' .anchor('students/add', 'Add Student'). '</li>';
         echo '<li>' .anchor('students/add', 'Upload CSV'). '</li>';
     echo '</ul>';
