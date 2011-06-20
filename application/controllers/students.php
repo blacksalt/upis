@@ -66,6 +66,12 @@ class Students extends MY_Controller {
                     'landline' => $this->input->post('landline'),
                     'email' => $this->input->post('email'),
                     
+                    'religion' => $this->input->post('religion'),
+                    'entry' => $this->input->post('entry'),
+                    'graduate' => $this->input->post('graduate'),
+                    'upcat' => $this->input->post('upcat'),
+                    'disciplinary' => $this->input->post('disciplinary'),
+                    
                     'father' => $this->input->post('father'),
                     'foccupation' => $this->input->post('foccupation'),
                     'foffice' => $this->input->post('foffice'),
@@ -82,9 +88,9 @@ class Students extends MY_Controller {
                     );
                     
                     #TODO: implement student number assignment
-                    $this->Students_model->insert_student($new);
+                    $id = $this->Students_model->insert_student($new);
                     $this->session->flashdata('success', 'Student successfully added');
-                    redirect('students/add');
+                    redirect('students/view_student/'.$id);
                 
             } else {
                 $this->render('admin/students/add');
@@ -143,6 +149,7 @@ class Students extends MY_Controller {
     
     # TODO: Upload CSV Student Profile
     # TODO: View Student Profile
+        #TODO: upload image
     # TODO: Update Student Profile
     
     # TODO: print pdf batch list

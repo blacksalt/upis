@@ -26,6 +26,7 @@ class Students_model extends CI_Model {
     
     function insert_student( $student ) {
         $this->db->insert('students', $student);
+        return $this->db->insert_id();
     }
     
     function get_students_by_batch( $batch_id ) {
