@@ -93,7 +93,7 @@ class Students extends MY_Controller {
                              'remarks' => $this->input->post('remarks'));
             
             $this->Students_model->insert_batch($batch);
-            $this->session->set_flashdata('success','Batch ' .$year. ' successfully added.');            
+            $this->session->set_flashdata('success','Batch successfully added.');            
             redirect('students/add_batch');
 
         } else {
