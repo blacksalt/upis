@@ -8,6 +8,7 @@ body {
 #wrapper {
     width: 950px;
     margin: auto; padding: 0;
+    padding-bottom: 10px;
 }
 
 #header {
@@ -70,7 +71,6 @@ body {
 #leftpane {
     width: 660px;
     float: left;
-    border-right: 2px solid #98C83F;
     padding: 5px 0;
 }
 
@@ -78,7 +78,9 @@ body {
     width: 225px;
     float: right;
     padding: 10px;
+    padding-left: 15px;
     font-size: 15px;
+    border-left: 2px solid #98C83F;
 }
 
 #rightpane ul {
@@ -106,6 +108,7 @@ body {
     background: #BAEA5F;
     background: #DDD;
     border-top: 2px solid #333;
+    height: 25px;
     text-align: center;
     color: #333;
     border-bottom-left-radius : 5px 5px;

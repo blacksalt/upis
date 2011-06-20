@@ -55,24 +55,6 @@
                     <?php echo $this->session->flashdata('success') ?>
                 </div>
                 <?php print $content ?>
-                <h2>Welcome to student module</h2>
-                <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Batch</th>
-                        <th>Section</th>
-                    </tr>
-                    <tr>
-                        <td>Rosa Miranda</td>
-                        <td>2008</td>
-                        <td>Narra</td>
-                    </tr>
-                    <tr>
-                        <td>Jandel Dela Cruz</td>
-                        <td>2009</td>
-                        <td>Gold</td>                    
-                    </tr>
-                </table>
             </div>
             <div id = "rightpane">
                 <?php echo $subnav;?>
