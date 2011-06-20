@@ -6,6 +6,8 @@ class Students_model extends CI_Model {
         parent::__construct();
     }
     
+    # Batch functions
+    
     function insert_batch($batch) {
         $this->db->insert('batch', $batch);
     }
@@ -14,5 +16,12 @@ class Students_model extends CI_Model {
         return $this->db->get('batch')
                         ->result();
     }
+    
+    # Students function
+    
+    function insert_student($student) {
+        $this->db->insert('students', $student);
+    }
+    
 }
     

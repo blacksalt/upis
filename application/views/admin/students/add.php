@@ -1,11 +1,13 @@
 <h2>Add Student</h2>
 
 <?php
+    $batch = create_dropdown_array('batch_id', 'year', $batch);
+
     echo form_open('students/add');
 
     echo form_label('Batch','batch');
-    echo form_dropdown('batch_year', array('2010'=>'2010','2009'=>'2009', '2010'=>'2010'));
-    echo form_error('batch_year');
+    echo form_dropdown('batch_id', $batch);
+    echo form_error('batch_id');
     echo br();
 
     echo form_label('Last','last');
@@ -81,8 +83,8 @@
     echo br();
 
     echo form_label('With Disciplinary Case','disciplinary');
-    echo form_radio(array('name'=>'disciplinary', 'value'=>'1', 'checked'=>TRUE)) .'Yes';
-    echo form_radio(array('name'=>'disciplinary', 'value'=>'0', 'checked'=>FALSE)) .'No';
+    echo form_radio(array('name'=>'disciplinary', 'value'=>'1', 'checked'=>FALSE)) .'Yes';
+    echo form_radio(array('name'=>'disciplinary', 'value'=>'0', 'checked'=>TRUE)) .'No';
     echo form_error('disciplinary');   
     echo br(); 
     
