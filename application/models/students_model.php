@@ -34,5 +34,10 @@ class Students_model extends CI_Model {
                         ->where('students.batch_id', $batch_id)
                         ->get('students')->result();
     }
+    
+    function get_student( $id ) {
+        return $this->db->where('students.student_id', $id)
+                        ->get('students')->row();
+    }
 }
     

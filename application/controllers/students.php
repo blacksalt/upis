@@ -133,6 +133,10 @@ class Students extends MY_Controller {
         $this->render('admin/students/student_list');
     }
     
+    function view_student( $id = null) {
+        $this->data['student'] = $this->Students_model->get_student($id);
+        $this->render('admin/students/view');
+    }
     # TODO: delete batch (if no student instance yet)
     # TODO: edit batch
     
