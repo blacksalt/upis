@@ -10,7 +10,7 @@ class Students extends MY_Controller {
     
     function index() {
         //check if admin
-        redirect('admin/students/add');
+        redirect('students/add');
     }
 
     # TODO: Add individual Student Profile
@@ -127,16 +127,22 @@ class Students extends MY_Controller {
         $this->render('admin/students/batch/batch_list');
     }
     
-    function view_batch($batch_id = null) {
-    
+    function view_batch( $batch_id = null ) {
+        $this->data['students'] = $this->Students_model->get_students_by_batch($batch_id);
+        $this->data['batch'] = $this->Students_model->get_batch_by_id($batch_id);
+        $this->render('admin/students/student_list');
     }
     
     # TODO: delete batch (if no student instance yet)
     # TODO: edit batch
     
+    
     # TODO: Upload CSV Student Profile
     # TODO: View Student Profile
     # TODO: Update Student Profile
+    
+    # TODO: print pdf batch list
+    # tODO: print pdf student profile
     
     
 
