@@ -1,0 +1,117 @@
+form {  /* set width in form, not fieldset (still takes up more room w/ fieldset width */
+    font:100% verdana,arial,sans-serif;
+    padding: 0;
+
+    max-width: 450px;
+    width: 500px; 
+    background-color: #E6E6E6;
+    margin: auto;
+    padding: 10px;
+}
+
+form fieldset {
+  /* clear: both; note that this clear causes inputs to break to left in ie5.x mac, commented out */
+    border-color: #000;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px;        /* padding in fieldset support spotty in IE */
+    margin: 0;
+}
+
+form fieldset legend {
+	font-size:1.1em; /* bump up legend font size, not too large or it'll overwrite border on left */
+                       /* be careful with padding, it'll shift the nice offset on top of border  */
+}
+
+form label { 
+	display: block;  /* block float the labels to left column, set a width */
+	float: left; 
+	width: 150px; 
+	padding: 5px 10px 0 0; 
+	margin: 5px 0 0; /* set top margin same as form input - textarea etc. elements */
+	height: 20px;
+	line-height: 18px;
+	text-align: right; 
+}
+
+form fieldset label:first-letter { /* use first-letter pseudo-class to underline accesskey, note that */
+	text-decoration:underline;    /* Firefox 1.07 WIN and Explorer 5.2 Mac don't support first-letter */
+    
+                                    /* pseudo-class on legend elements, but do support it on label elements */
+                                    /* we instead underline first letter on each label element and accesskey */
+                                    /* each input. doing only legends would  lessens cognitive load */
+                                   /* opera breaks after first letter underlined legends but not labels */
+}
+
+form input, form textarea, form select {
+	/* display: inline; inline display must not be set or will hide submit buttons in IE 5x mac */
+	width:200px;      /* set width of form elements to auto-size, otherwise watch for wrap on resize */
+	margin:10px 40px 0 0; /* set margin on left of form elements rather than right of
+                              label aligns textarea better in IE */
+    height: 18px;
+}
+
+form input#reset {
+	margin-left:0px; /* set margin-left back to zero on reset button (set above) */
+}
+
+textarea { overflow: auto; }
+
+form small {
+	display: block;
+	margin: 0 0 5px 160px; /* instructions/comments left margin set to align w/ right column inputs */
+	padding: 1px 3px;
+	font-size: 88%;
+}
+
+form .required{font-weight:bold;} /* uses class instead of div, more efficient */
+
+form br {
+	clear:left; /* setting clear on inputs didn't work consistently, so brs added for degrade */
+}
+
+form input[type='submit']{
+    clear:both;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:150px;
+    height:31px;
+    text-align:center;
+    color:#FFFFFF;
+    font-size:13px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    background: -moz-linear-gradient(top, #4386a6 0%, #549bba 33%, #549bba 66%, #4386a6 98%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4386a6), color-stop(33%,#549bba), color-stop(66%,#549bba), color-stop(98%,#4386a6)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #4386a6 0%,#549bba 33%,#549bba 66%,#4386a6 98%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #4386a6 0%,#549bba 33%,#549bba 66%,#4386a6 98%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #4386a6 0%,#549bba 33%,#549bba 66%,#4386a6 98%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4386a6', endColorstr='#4386a6',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #4386a6 0%,#549bba 33%,#549bba 66%,#4386a6 98%); /* W3C */
+}
+
+input[type=text], input[type=password],
+input.text, input.title,
+textarea {
+    background-color:#fff;
+    border:1px solid #bbb;
+}
+input[type=text]:focus, input[type=password]:focus,
+input.text:focus, input.title:focus,
+textarea:focus {
+    border-color:#666;
+}
+
+input[type=checkbox] {
+    border: 1px solid #bbb;
+}
+form input[type='radio']{
+    margin: 10px;
+}
+select {
+    font-size: 12px;
+    border-width:1px;
+    border-style:solid;
+}

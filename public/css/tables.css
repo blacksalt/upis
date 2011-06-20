@@ -1,0 +1,49 @@
+/* 
+	Web20 Table Style
+	written by Netway Media, http://www.netway-media.com
+*/
+table {
+    width: 70%;
+/*     border-collapse: collapse; */
+    border: 1px solid #666666;
+    font: normal 11px verdana, arial, helvetica, sans-serif;
+    color: #333;
+    background: #f6f6f6;
+    text-align:left;
+	margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+caption {
+    text-align: center;
+    font: bold 16px arial, helvetica, sans-serif;
+    background: transparent;
+    padding:6px 4px 8px 0px;
+    color: #CC00FF;
+    text-transform: uppercase;
+}
+thead, tfoot {
+    background: #455268;
+    text-align:left;
+    height:30px;
+    color: #FFF;
+}
+thead th, tfoot th {
+    padding:5px;
+}
+th {
+    background-color: #B9EA5F;
+}
+table a {
+    color: #333333;
+    text-decoration:none;
+}
+table a:hover {
+    text-decoration:underline;
+}
+tr.odd {
+    background: #f1f1f1;
+}
+tbody th, tbody td {
+    padding:5px;
+}
