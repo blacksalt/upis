@@ -50,6 +50,10 @@
         </div>
         <div id = "content">
             <div id = "leftpane">
+                <div id="messages">
+                    <?php echo $this->session->flashdata('error') ?>
+                    <?php echo $this->session->flashdata('success') ?>
+                </div>
                 <?php print $content ?>
                 <h2>Welcome to student module</h2>
                 <table>
@@ -71,11 +75,7 @@
                 </table>
             </div>
             <div id = "rightpane">
-                <ul>
-                    <li><a href=#>Add Student</a><li>
-                    <li><a href=#>Upload CSV</a><li>
-                    <li><a href=#>Long long long long very loooooong option</a><li>
-                </ul>
+                <?php echo $subnav;?>
             </div>    
             <div style="clear:both;"></div>
         </div>
