@@ -82,14 +82,17 @@ class Students extends MY_Controller {
     
     function add_batch() {
         $this->load->library('form_validation');
+        $this->load->model('Students_model');
         
-       #TODO: additional validation? 
+        #TODO: additional validation? 
         $this->form_validation->set_rules('year','Year','required|numeric|exact_length[4]|callback_check_year');
         $this->form_validation->set_rules('remarks','Remarks','');
         
         if ($this->form_validation->run()) {
-            $year = $this->input->post('year');
-
+            $batch = array ( 'year' => $this->input->post('year'),
+                             'remarks' => $this->input->post('remarks'));
+            
+            $this->Students_model->insert_batch($batch);
             $this->session->set_flashdata('success','Batch ' .$year. ' successfully added.');            
             redirect('students/add_batch');
 
