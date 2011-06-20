@@ -71,7 +71,6 @@ body {
 #leftpane {
     width: 660px;
     float: left;
-    border-right: 2px solid #98C83F;
     padding: 5px 0;
 }
 
@@ -79,7 +78,9 @@ body {
     width: 225px;
     float: right;
     padding: 10px;
+    padding-left: 15px;
     font-size: 15px;
+    border-left: 2px solid #98C83F;
 }
 
 #rightpane ul {
