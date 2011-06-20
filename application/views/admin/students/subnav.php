@@ -2,7 +2,6 @@
     echo '<h3>Batch</h3>';
     echo '<ul>';
         echo '<li>' .anchor('students/add_batch', 'Add Batch'). '</li>';
-        echo '<li>' .anchor('students/add', 'Edit Batch'). '</li>';
     echo '</ul>';
     
     echo '<h3>Students</h3>';

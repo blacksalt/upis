@@ -96,9 +96,9 @@ class Students extends MY_Controller {
             $this->session->set_flashdata('success','Batch successfully added.');            
             redirect('students/add_batch');
 
-        } else {
-            $this->render('admin/students/batch/add');
         }
+        $this->data['batch'] = $this->Students_model->get_all_batch();
+        $this->render('admin/students/batch/add');
     }
     
     function check_year($yr) {

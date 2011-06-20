@@ -11,7 +11,8 @@ class Students_model extends CI_Model {
     }
     
     function get_all_batch() {
-        return TRUE;
+        return $this->db->get('batch')
+                        ->result();
     }
 }
     

@@ -1,6 +1,7 @@
-<h2>Add Student</h2>
+<h2>Add Batch</h2>
 
 <?php
+
     echo form_open('students/add_batch');
 
     echo form_label('Year','year');
@@ -17,4 +18,22 @@
     
     echo form_submit('add','Add');
     echo form_close();
+    
+    echo br();
+    
+    if ($batch != NULL) {
+        echo '<table>';
+        echo '<tr> <th>Batch</th> <th>Remarks</th> <th colspan="2">Actions</th> </tr>';
+        foreach($batch as $item){
+            echo '<tr>';
+            echo'<td>'.$item->year.'</td>';
+            echo'<td>'.$item->remarks.'</td>';
+            echo'<td>'.anchor('students/edit_batch/'.$item->batch_id, 'Edit').'</td>';
+            echo'<td>'.anchor('students/delete_batch/'.$item->batch_id, 'Delete').'</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+    }
+
 ?>
+
