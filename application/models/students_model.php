@@ -22,6 +22,24 @@ class Students_model extends CI_Model {
                         ->get('batch')->row();
     }
     
+    function delete_batch( $id ) {
+        $batch = $this->db->where( 'batch_id', $id )->get( 'batch' )->row();
+        $students = $this->db->where ( 'batch_id', $id )->get( 'students' )->row();
+
+        if( $batch == NULL ) {
+            return 'FALSE';
+        } else {
+            if($students == NULL){
+                return $this->db->delete('batch', array( 'batch_id'=>$id ));            
+            } else {
+                return 'there exists a student';                
+            } 
+        }
+    }
+
+
+    
+    
     # Students function
     
     function insert_student( $student ) {
@@ -33,7 +51,7 @@ class Students_model extends CI_Model {
         return $this->db->select('students.student_id, students.student_no')
                         ->select('students.last, students.given, students.middle')
                         ->where('students.batch_id', $batch_id)
-                        ->get('students')->result();
+                        ->get('students');
     }
     
     function get_student( $id ) {
