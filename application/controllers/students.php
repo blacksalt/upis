@@ -123,6 +123,19 @@ class Students extends MY_Controller {
         $this->render('admin/students/batch/add');
     }
     
+    function delete_batch($id = null) {
+        $result = $this->Students_model->delete_batch($id);
+        if ($result == 'TRUE') { 
+            $this->session->set_flashdata('success', 'Batch successfully deleted');
+        } else if ($result == 'FALSE') {
+            $this->session->set_flashdata('error', 'Batch doesnt exist');
+       } else {
+            $this->session->set_flashdata('error', 'Cant delete batch. A student exists in this group.');
+       }
+       redirect('students/add_batch'); 
+       echo $result;
+    }
+    
     function check_year($yr) {
         //check for multiple instance
         return TRUE;
