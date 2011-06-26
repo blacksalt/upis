@@ -51,7 +51,7 @@ class Students_model extends CI_Model {
         return $this->db->select('students.student_id, students.student_no')
                         ->select('students.last, students.given, students.middle')
                         ->where('students.batch_id', $batch_id)
-                        ->get('students')->result();
+                        ->get('students');
     }
     
     function get_student( $id ) {

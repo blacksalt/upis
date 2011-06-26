@@ -136,27 +136,31 @@ class Students extends MY_Controller {
        echo $result;
     }
     
+    #TODO: check multiple instance before adding batch
     function check_year($yr) {
         //check for multiple instance
         return TRUE;
     }
     
+    # generates list of batches
     function view_all() {
         $this->data['batch'] = $this->Students_model->get_all_batch();
         $this->render('admin/students/batch/batch_list');
     }
     
+    # generates list of students in a batch
     function view_batch( $batch_id = null ) {
-        $this->data['students'] = $this->Students_model->get_students_by_batch($batch_id);
-        $this->data['batch'] = $this->Students_model->get_batch_by_id($batch_id);
+        $this->data['students'] = $this->Students_model->get_students_by_batch( $batch_id );
+        $this->data['batch'] = $this->Students_model->get_batch_by_id( $batch_id );
         $this->render('admin/students/student_list');
     }
     
+    # generates student profile
     function view_student( $id = null) {
         $this->data['student'] = $this->Students_model->get_student($id);
         $this->render('admin/students/view');
     }
-    # TODO: delete batch (if no student instance yet)
+
     # TODO: edit batch
     
     
